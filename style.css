@@ -1,0 +1,1783 @@
+:root{
+    --primary:  #ff1018;
+    --secondary:  #4f0f11;
+    --yellow: #f5a425;
+    --black: #0c0c0c;
+    --dark: #131313;
+    --blue: #191c70;
+    --white: #bababa;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif !important;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    /* border: 1px solid #fff; */
+}
+
+body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none !important;
+    color: var(--white)
+}
+
+a:hover{
+    color: var(--yellow);
+}
+
+li{
+    list-style: none;
+}
+
+li a.active{
+    color: var(--yellow);
+}
+
+b{
+    font-weight: 700;
+}
+
+h1{
+    font-size: 40px;
+    color: var(--white);
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 14px;
+}
+
+h4{
+    font-size: 12px;
+    color: var(--white);
+}
+
+p{
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#jumbotron{
+    min-height: 40vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+}
+
+.btn-book{
+    background-color: var(--secondary);
+    color: var(--white);
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 10px;
+}
+
+.btn-book:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+/* navbar */
+/* style back to top */
+.to-top {
+  background: white;
+  position: fixed;
+  bottom: 16px;
+  right:32px;
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:32px;
+  color:#1f1f1f;
+  text-decoration: none;
+  opacity:0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.to-top.active {
+  bottom:32px;
+  pointer-events: auto;
+  opacity:1;
+}
+
+.btn-to-back {
+    background: var(--secondary);
+    color: var(--yellow);
+    border: none;
+    position: relative;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    display: block;
+    padding-bottom: 5px;
+    justify-content: center;
+    font-size:32px;
+    cursor: pointer;
+}
+
+/* Style the navbar */
+nav {
+    display: flex;
+    gap: 50px;
+    background-color: var(--black);
+    color: #fff;
+    padding: 20px;
+    font-size: 14px;
+}
+  
+  /* Style the logo */
+
+nav span:first-child{
+    color: var(--primary);
+    font-size: 1.5rem;
+    
+}
+
+nav span:last-child{
+    color: var(--yellow);
+    font-size: 1.5rem;
+    display: block;
+    
+}
+  
+  /* Style the nav links */
+.nav-links {
+    display: flex;
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    top: 90px;
+    gap: 70px;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    transform: translateX(100%);
+    text-align: center;
+    background-color: var(--black);
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.nav-links.show{
+    display: flex;
+    transform: translateX(0);
+}
+  
+.nav-links a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav-links a:hover{
+    color: var(--yellow);
+}
+  
+  /* Style the burger menu */
+.burger {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+}
+  
+.burger .line {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: var(--white);
+    border-radius: 3px;
+}
+
+/* navbar end */
+
+/* style welcome */
+
+#welcome{
+    min-height: 40vh;
+}
+
+/* carousel */
+.carousel_inner{
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.carousel_inner::after{
+   content: "";
+   display: block;
+   clear: both;
+}
+
+.carousel_item{
+   position: relative;
+   float: left;
+   display: none;
+   width: 100%;
+   height: 100%;
+   margin-right: -100%;
+}
+
+/* slide effect */
+.carousel_item__active,
+.carousel_item__pos_next{
+   display: block;
+}
+
+.carousel_item__pos_next{
+   left: 100%;
+}
+
+.carousel_item__next{
+   transform: translateX(-100%);
+   transition: transform .5s ease-in-out;
+}
+
+/* fade effect */
+.carousel__fade .carousel_item__pos_next{
+   left: 0;
+   opacity: 0;
+}
+
+.carousel__fade .carousel_item__next{
+   transform: none;
+   opacity: 1;
+   transition: opacity .5s ease-in-out;
+}
+
+.carousel__fade .carousel_item__active.carousel_item__next{
+   opacity: 0;
+}
+
+/* carousel */
+.carousel_img{
+   display: block;
+   position: relative;
+   height: 40vh;
+   width: 100%;
+   object-fit: cover;
+}
+
+.carousel_caption{
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   padding: 200px 14px;
+   text-align: center;
+   color: var(--white);
+   background: rgba(0, 0, 0, 0.5);
+   text-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+   z-index: 1;
+}
+
+
+
+/* sec welcome end */
+
+/* style about us start */
+.about-us{
+    background-color: var(--dark);
+    padding: 30px;
+}
+
+.about-us p{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.caption{
+    justify-content: center;
+}
+
+
+.about-us h2{
+    color: var(--yellow);
+}
+
+
+.background-caption{
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 4px 6px;
+}
+
+.caption-pictures{
+    width: 100%;
+    height: auto;
+}
+
+.caption-area{
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.caption img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.caption p{
+    color: var(--white);
+    text-align: left;
+}
+
+.second-caption {
+    padding: 2px;
+    margin-left: 0px;
+}
+
+
+/* style about us end */
+
+/* style facility start*/
+.facility{
+    background-image:url(./assets/background/bgtv2.jpg);
+    text-align: center;
+    justify-content: center;
+}
+
+.facility h2{
+    margin-top: 20px;
+    color: var(--white);
+}
+
+.facility p{
+    font-size: 10px;
+    color: var(--white);
+}
+
+/* style facility end */
+
+/* style index food start */
+.food{
+    background-color: var(--dark);
+    justify-content: center;
+    text-align: center;
+}
+
+.food h2{
+    color: var(--white);
+
+}
+
+.food p{
+    margin-top: 10px;
+    color: var(--white);
+}
+
+.galery{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.galery img{
+    width: 45%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 5px;
+}
+/* style index food end */
+
+/* style sec entertainment start */
+.entertainment{
+    background-image: url(./assets/background/cinema.jpg);
+    min-height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px;
+}
+
+.oscar{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.entertainment h2, h3, p{
+    color: var(--white);
+    margin-top: 5px;
+}
+
+.oscar p{
+    font-weight: 500;
+    line-height: 28px;
+    margin-left: 0px;
+}
+
+.oscar img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.trending{
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-caption{
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.trending p{
+    font-weight: 500;
+    line-height: 28px;
+    margin-left: 0;
+}
+
+.trending img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.trending h2{
+    color: var(--white);
+}
+
+/* style sec entertainment end */
+
+/* style footer start */
+footer{
+    background-color: var(--black);
+    padding: 30px;
+}
+
+#footer{
+    min-height: 40vh;
+}
+
+footer h2{
+    color: var(--yellow);
+}
+
+footer .address{
+    margin-top: 10px;
+}
+
+footer .contact{
+    margin-top: 10px;
+}
+
+footer .whatsapp{
+    display: flex;
+    flex-direction: row;
+    margin-top: 6px;
+}
+
+footer .email{
+    display: flex;
+    flex-direction: row;
+    margin-top: 6px;
+}
+
+footer h5{
+    color: var(--white);
+    margin-left: 6px;
+}
+
+footer p{
+    margin-left: 0px;
+    line-height: 20px;
+}
+/* style footer end */
+
+/* style room header start */
+
+#room-header{
+    background-color: var(--black);
+    justify-content: center;
+    text-align: center;
+    min-height: 10vh;
+    padding: 30px;
+}
+
+/* style room header end */
+
+/* style room start */
+#room{
+    background: linear-gradient(180deg, var(--black) 1.87%, var(--secondary) 51.62%, var(--black) 100%);
+    min-height: 200vh;
+    padding: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.room-header p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.room .first{
+    margin-bottom: 30px;
+}
+
+.room h2, h3, p{
+    color: var(--white);
+    margin-left: 0;
+
+}
+
+.room h5{
+    color: var(--yellow);
+    margin-top: 3px;
+}
+
+hr{
+    margin-top: 8px;
+}
+
+.room .second{
+    margin-bottom: 30px;
+}
+
+.room .third{
+    margin-bottom: 30px;
+}
+/* style room end */
+
+/* style movie start */
+
+#movie{
+    min-height: 200vh;
+    background: linear-gradient(180deg, var(--black) 3.87%, var(--secondary) 50.62%, var(--black) 100%);
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.movie h1, h2, h3, h4, p{
+    color: var(--white);
+}
+
+.movie h3{
+    font-size: 14px;
+}
+
+.movie-header{
+    text-align: center;
+}
+
+.movie-header p{
+    color: var(--white);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.nowplaying-header{
+    padding-top: 20px;
+}
+
+.nowplaying-galery{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poster{
+    margin: 6px;
+    height: 80%;
+    width: 45%;
+    padding: 5px;
+    background-color: #0c0c0c;
+    position: relative;
+}
+
+.nowplaying-galery img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.nowplaying-header{
+    margin-top: 10px;
+}
+
+
+.btn-poster{
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 8px;
+    color: white;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    margin-top: 4px;
+    font-size: 10px;
+}
+
+.btn-poster:hover{
+    color: var(--yellow);
+    background-color: var(--black);
+}
+
+.ratings-17{
+    color: white;
+    background-color: var(--primary);
+    position: absolute;
+    backdrop-filter: blur(10px);
+    padding: 3px;
+    border-radius: 12px;
+    top: 10px;
+    right: 10px; 
+    width: auto;
+    height: auto;
+}
+
+.ratings-13{
+    color: white;
+    background-color: var(--blue);
+    position: absolute;
+    backdrop-filter: blur(10px);
+    padding: 3px;
+    border-radius: 12px;
+    top: 10px;
+    right: 10px; 
+    width: auto;
+    height: auto;
+}
+
+.ratings-su{
+    color: white;
+    background-color: var(--yellow);
+    position: absolute;
+    backdrop-filter: blur(10px);
+    padding: 3px;
+    border-radius: 12px;
+    top: 10px;
+    right: 10px; 
+    width: auto;
+    height: auto;
+}
+/* style movie end */
+
+/* style booking start */
+
+#booking{
+    min-height: 110vh;
+    background-image: url(./assets/background/bg-booking.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 30px;
+}
+
+.btn-booking{
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 8px;
+    color: white;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    margin-top: 6px;
+    font-size: 10px;
+}
+
+.btn-booking:hover{
+    color: var(--yellow);
+    background-color: var(--black);
+}
+
+.booking .menu{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.booking-form{
+    position: relative;
+    margin-top: 40px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    position: center;
+    margin: auto;
+    width: 300px;
+    padding: 22px 22px;
+    background: rgba(0, 0, 0, 0.04);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+.content header {
+    background: rgba(0, 0, 0, 0.04);
+    font-size: 40px;
+    display: flex;
+    font-weight: 600;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.content-header h2{
+    color: var(--yellow);
+}
+
+.field {
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 10px;
+}
+
+.field span {
+    color: #222;
+    width: 40px;
+    line-height: 35px;
+    padding: 0 10px;
+}
+
+.field input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #222;
+    font-size: 12px;
+}
+
+.form-control{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.space {
+    margin-top: 10px;
+}
+
+.pass {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.pass a {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.pass:hover a {
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #af3636 0%, #e19a15 100%);
+    border: 1px solid linear-gradient(to right, #0000ff 0%, #6666ff 100%);
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to left, #0000ff 0%, #6666ff 100%);
+}
+
+.login {
+    color: #fff;
+    font-family: 'inter', sans-serif;
+}
+
+.link {
+    display: flex;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 0 20px 0;
+}
+
+.google,
+.instagram {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.google {
+    margin-left: 0px;
+    background: #4267B2;
+    border: 1px solid #3e61a8;
+}
+
+.instagram {
+    background: linear-gradient(to right, #9900cc 0%, #ff3399 100%);
+    border: 1px solid linear-gradient(to right, #9900cc 0%, #ff3399 100%);
+}
+
+.google:hover {
+    background: #3e61a8;
+}
+
+.instagram:hover {
+    background: linear-gradient(to left, #9900cc 0%, #ff3399 100%);
+}
+
+.link i {
+    font-size: 17px;
+}
+
+.link span {
+    font-size: 15px;
+    margin-left: 8px;
+
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.signup {
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.signup a {
+    color: #37ff00;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+/* style booking end */
+.fnb{
+    background-image:url(./assets/background/vendinf.jpg) ;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+}
+
+
+.fnb .movie-header{
+    line-height: 70px;
+}
+
+.fnb .galery{
+    margin-top: 24px;
+    gap: 10px;
+}
+
+.card-fnb{
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    height: 170px;
+    width: 170px;
+    transform: scale(1);
+    overflow: hidden;
+}
+
+.fnb .galery img{
+    width: 100%;
+}
+
+.fnb .movie-header{
+    text-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.8);
+}
+
+.img-title{
+    position: absolute;
+    background-color: rgba(5, 5, 5, 0.7);
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    top: 300px;
+    text-align: center;
+    transition: all 0.5s ease-in;
+}
+
+.card-fnb:hover .img-title{
+    top: 0;
+    transition: all 0.5s ease-out;
+}
+
+.card-fnb img{
+    transform: scale(1);
+    transition: all .3s ease-out;
+}
+
+.card-fnb:hover img{
+    transform: scale(1.1);
+    transition: all .3s ease-in;
+}
+
+.img-title h4{
+    color: white;
+    position: relative;
+    margin-top: 50px;
+}
+
+.img-title h5, p{
+    color: white;
+    font-size: 13px;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* style detail film start */
+#detailfilm{
+    background: linear-gradient(180deg, var(--black) 1.87%, var(--secondary) 51.62%, var(--black) 100%);
+    min-height: 120vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.film1 .poster{
+   width: auto;
+   display: flex;
+}
+
+.judul{
+    width: 40%;
+    height: 100%;
+}
+
+.judul img{
+    width: 100%;
+}
+
+.sinopsis{
+    width: 50%;
+    margin-left: 10px;
+}
+
+.sinopsis p{
+    margin-top: 0;
+    font-size: 70%;
+}
+
+.trailer{
+    margin-top: 30px;
+}
+
+.trailer .video{
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
+}
+
+/* style detail film end */
+
+/* style fnb start*/
+
+/* style fnb end */
+
+/* Media query for responsive design */
+
+/* dekstop */
+@media screen and (min-width: 967px) {
+    h1{
+        font-size: 70px;
+    }
+
+    h2{
+        font-size: 32px;
+    }
+
+    h3{
+        font-size: 28px;
+    }
+
+    p{
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .nav-links {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        gap: 40px;
+        right: 0;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        width: 100%;
+        height: 0;
+        transform: none;
+        text-align: center;
+        background-color: var(--black);
+        transition: none;
+        z-index: none;
+    }
+
+    nav span:first-child{
+        font-size: 3rem;
+    }
+
+    nav span:last-child{
+        font-size: 3rem;
+        display: inline;
+    }
+  
+    .burger {
+      display: none;
+    }
+
+    /* style index html start */
+    #jumbotron{
+        min-height: 100vh;
+        padding: 70px 100px;
+    }
+
+    #welcome{
+        min-height: 100vh;
+    }
+    
+    .carousel_img{
+        height: 100vh;
+    }
+
+    #entertainment{
+        min-height: 100vh;
+        background-attachment: fixed;
+    }
+
+    .welcome h1{
+        font-size: 70px;
+        margin-top: 300px;
+    }
+    
+    .welcome p{
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .carousel_caption{
+        padding-top: 350px;
+    }
+
+    .caption{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+    .caption-pictures{
+        width: 50%;
+    }
+
+    .caption img{
+        height: auto;
+        width: 100%;
+    }
+
+    .caption-area{
+        width: 50%;
+        margin-left: 20px;
+        margin-top: 0;
+    }
+
+    .background-caption{
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 20px;
+        font-weight: 500;
+    }
+
+    .about-us p{
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .second-caption{
+        margin-top: 10px;
+    }
+
+    .second-caption p{
+        font-size: 18px;
+        color: var(--white);
+        font-weight: 400;
+    }
+
+    .btn-book{
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+
+    .facility p{
+        font-size: 16px;
+    }
+
+    .galery img{
+        height: 300px;
+        width: 300px;
+        margin: 20px auto;
+    }
+    
+    .oscar{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .oscar-caption{
+        margin-left: 20px;
+    }
+
+    .entertainment p{
+        margin-left: 0px;
+    }
+
+    .trending{
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 20px;
+    }
+
+    /* style index html end */
+
+    /* style footer start */
+    footer .container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 180px;
+    }
+
+    footer p{
+        margin-left: 0;
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+    footer h4{
+        font-size: 20px;
+    }
+
+    .contact .whatsapp{
+        margin-top: 16px;
+        gap: 10px;
+    }
+
+    .contact .email{
+        margin-top: 16px;
+        gap: 10px;
+    }
+    /* style footer end */
+
+
+    /* style booking html start */
+
+    #booking{
+        padding: 70px 100px;
+        min-height: 150vh;
+    }
+
+    .room p{
+        margin-left: 0;
+    }
+
+    .room h5{
+        font-size: 16px;
+        color: var(--yellow);
+    }
+    
+
+    .movie-header p{
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+
+    .booking-form{
+        margin-top: 50px;
+    }
+
+    .btn-booking{
+        font-size: 14px;
+    }
+
+    .content{
+        width: 450px;
+        margin: auto;
+    }
+
+    .content-header{
+        gap: 40px;
+
+    }
+
+    .content-header img{
+        height: 100%;
+        width: auto;
+    }
+
+    .field{
+        width: auto;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .field img{
+        margin-top: 12px;
+    }
+
+    /* style fnb start */
+    #fnb{
+        min-height: 150vh;
+        padding: 70px 100px;
+    }
+
+    .fnb p{
+        line-height: 30px;
+    }
+
+    .fnb h4{
+        font-size: 20px;
+    }
+
+    .fnb h5{
+        font-size: 16px;
+    }
+
+    .card-fnb{
+        display: flex;
+        position: relative;
+        border-radius: 16px;
+        height: 300px;
+        width: 300px;
+        transform: scale(1);
+        overflow: hidden;
+    }
+
+    .card-fnb img{
+        border-radius: 16px;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .img-title{
+        height: 100%;
+        width: 100%;
+        border-radius: 16px;
+        top: 400px;
+        position: absolute;
+        padding: 20px;
+    }
+
+    .img-title p, h4, h5{
+        margin-left: 0;
+    }
+    
+    .movie h3{
+        font-size: 24px;
+    }
+
+    .nowplaying-galery{
+        gap: 30px;
+    }
+    
+    .nowplaying-galery img{
+        width: auto;
+        height: auto;
+    }
+
+    .poster{
+        width: auto;
+    }
+
+    .ratings-13, .ratings-17, .ratings-su{
+        margin-top: 16px;
+        margin-right: 10px;
+    }
+    /* style */
+
+   #detailfilm{
+        padding: 100px;
+        min-height: 100vh;
+    }
+
+    .btn-poster{
+        font-size: 14px;
+    }
+
+    .film1 .container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    
+    .film1 .poster{
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        padding: 20px;
+        margin: 0;
+        width: 50%;
+        height: auto;
+    }
+    
+    .judul{
+        width: 80%;
+    }
+
+    .judul h3{
+        font-size: 20px;
+    }
+
+    .judul img{
+        width: 100%;
+        margin-top: 18px;
+    }
+    
+    .sinopsis{
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .sinopsis p{
+        font-size: 100%;
+    }
+
+    .trailer{
+        width: 50%;
+        margin-left: 80px;
+        margin-top: -10px;
+    }
+    
+    .trailer .video{
+        margin-top: 10px;
+        width: 100%;
+        height: 450px;
+    }
+
+    .btn-to-back{
+        background: var(--secondary);
+        color: var(--yellow);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 40px;
+        display: block;
+        padding-bottom: 5px;
+        font-size:32px;
+        margin-right: 20px;
+    }
+
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 968px){
+    h1{
+        font-size: 50px;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+
+    h3{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 16px;
+        line-height: 30px;
+    }
+    
+    .nav-links {
+      display: flex;
+    }
+
+    nav span:first-child{
+        font-size: 3rem;
+    }
+
+    nav span:last-child{
+        font-size: 3rem;
+        display: inline;
+    }
+
+    .nav-links li {
+      margin: 10px 0;
+    }
+
+  
+    .burger {
+      display: block;
+      margin-left: auto;
+    }
+
+    /* style index html start */
+    #jumbotron{
+        min-height: 80vh;
+        padding: 20px 40px;
+    }
+
+    #welcome{
+        min-height: 80vh;
+    }
+    
+    .carousel_img{
+        height: 80vh;
+    }
+
+    .carousel_caption{
+        padding: 400px 30px;
+    }
+
+
+    #entertainment{
+        min-height: 80vh;
+        background-attachment: fixed;
+    }
+
+    .welcome h1{
+        font-size: 50px;
+        margin-top: 300px;
+    }
+    
+    .welcome p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .caption{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .caption img{
+        width: 100%;
+        height: auto;
+    }
+
+    .caption-pictures{
+        width: 50%;
+        height: auto;
+    }
+
+    .caption-area{
+        width: 50%;
+        margin-left: 20px;
+        margin-top: 0;
+    }
+
+    .background-caption{
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 500;
+    }
+
+    .about-us p{
+        font-size: 12px;
+        line-height: 30px;
+    }
+
+    .second-caption{
+        margin-top: 4px;
+        font-size: 16px;
+    }
+
+    .second-caption p{
+        font-size: 12px;
+        color: var(--white);
+        font-weight: 400;
+    }
+
+    .btn-book{
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 12px;
+        margin-top: 0px;
+    }
+
+    .facility p{
+        font-size: 16px;
+    }
+
+    .galery img{
+        margin-top: 30px;
+        height: 240px;
+        width: 45%;
+    }
+
+    .oscar{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .entertainment img{
+        height: 200px;
+        width: auto;
+    }
+
+    .oscar-caption{
+        margin-left: 20px;
+    }
+
+    .entertainment p{
+        margin-left: 0px;
+        font-size: 12px;
+    }
+
+    .entertainment h3{
+        font-size: 20px;
+    }
+
+    .trending{
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 20px;
+    }
+
+    /* style index html end */
+
+    /* style footer start */
+    footer .container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    footer h2, h3{
+        font-size: 20px;
+    }
+    footer p{
+        margin-left: 0;
+        line-height: 25px;
+        font-size: 14px;
+    }
+
+    footer h4{
+        font-size: 20px;
+    }
+
+    .contact .whatsapp{
+        margin-top: 16px;
+        gap: 10px;
+    }
+
+    .contact .email{
+        margin-top: 16px;
+        gap: 10px;
+    }
+    /* style footer end */
+
+
+    /* style booking html start */
+
+    #booking{
+        padding: 70px 100px;
+        min-height: 150vh;
+    }
+
+    .room p{
+        margin-left: 0;
+    }
+
+    .room h5{
+        font-size: 16px;
+        color: var(--yellow);
+    }
+    
+
+    .movie-header p{
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+
+    .booking-form{
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .btn-booking{
+        font-size: 14px;
+    }
+
+    .content{
+        width: 450px;
+        margin: auto;
+    }
+
+    .content-header{
+        gap: 40px;
+        text-align: center;
+    }
+
+    .content-header img{
+        height: 100%;
+        width: auto;
+    }
+
+    .field{
+        width: auto;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .field img{
+        margin-top: 12px;
+    }
+
+    /* style fnb start */
+    #fnb{
+        min-height: 150vh;
+        padding: 70px 100px;
+    }
+
+    .fnb p{
+        line-height: 30px;
+    }
+
+    .fnb h4{
+        font-size: 20px;
+    }
+
+    .fnb h5{
+        font-size: 16px;
+    }
+
+    .card-fnb{
+        display: flex;
+        position: relative;
+        border-radius: 16px;
+        height: 250px;
+        width: 40%;
+        transform: scale(1);
+        overflow: hidden;
+    }
+
+    .card-fnb img{
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .img-title{
+        height: 100%;
+        width: 100%;
+        border-radius: 16px;
+        top: 400px;
+        position: absolute;
+        padding: 16px;
+    }
+
+    .img-title p, h4, h5{
+        margin-left: 0;
+    }
+    
+    .movie h2{
+        font-size: 30px;
+    }
+
+    .nowplaying-galery{
+        gap: 30px;
+    }
+    
+    .nowplaying-galery img{
+        width: auto;
+        height: 338px;
+    }
+
+    .poster{
+        padding: 10px;
+        width: auto;
+    }
+
+    .ratings-13, .ratings-17, .ratings-su{
+        margin-top: 16px;
+        margin-right: 10px;
+    }
+
+    #detailfilm{
+        display: flex;
+        padding: 40px;
+    }
+    
+    .film1 .poster{
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        padding: 20px;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .judul{
+        width: 100%;
+    }
+
+    .judul img{
+        width: 100%;
+        margin-top: 18px;
+    }
+    
+    .sinopsis{
+        width: 100%;
+        height: 100%;
+        margin-left: 10px;
+    }
+
+    .sinopsis p{
+        font-size: 100%;
+        margin-top: 10px;
+    }
+
+    .trailer{
+        margin-top: 30px;
+    }
+    
+    .trailer .video{
+        margin-top: 20px;
+        width: 100%;
+        height: 300px;
+    }
+    /* style */
+}

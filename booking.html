@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roomcinema</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Navbar start -->
+   <nav>
+    <div class="logo">
+      <a href="#"><span><b>TheRC.</b></span><span><b>RoomCinema</b></span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="film.html">Film</a></li>
+      <li><a href="room.html">Ruangan</a></li>
+      <li><a href="food.html">Makanan dan Minuman</a></li>
+      <li><a class="active" href="booking.html" class="btn-book">Booking</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>          
+  <!-- Navbar end -->
+
+    <!-- header start-->
+    <section class="booking" id="booking">
+      <div class="container">
+        <div class="movie-header">
+          <h1>Booking Form</h1>
+          <p>
+            Silahkan isi formulir dibawah ini!<br/>
+            Pastikan kamu sudah mengetahui tentang
+          </p>
+          <div class="menu">
+            <a href="room.html">
+              <button class="btn-booking">Ruangan</button>
+            </a>
+            <a href="food.html">
+              <button class="btn-booking">Makanan dan Minuman</button>
+            </a>
+            <a href="film.html">
+              <button class="btn-booking">Film</button>
+            </a>
+          </div>
+        </div>
+        <div class="booking-form">
+          <div class="content">
+            <header class="content-header">
+              <img src="./assets/icon/film.png" alt="icon-film">
+              <h2><b>TheRC.<br/>RoomCinema</b></h2>
+            </header>
+            <form action="#">
+              <div class="field">
+                <span><img src="./assets/icon/user.png" alt=""></span>
+                <input type="text" required placeholder="Nama ">
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/email.png" alt=""></span>
+                  <input type="text" required placeholder="Email ">
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/phone.png" alt=""></span>
+                  <input type="number" class="Telepon" required placeholder="Telepon">
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/calendar.png" alt="" class="img-fluid"></span>
+                  <input type="datetime-local" class="tanggal" required placeholder="tanggal">
+              </div>
+              <div class="field space">
+                <span><img src="./assets/icon/room.png" alt="" class="img-fluid"></span>
+                <select type="room" id="form2Example17" class="form-control" >
+                    <option value="Room">Room</option>
+                    <option value="deluxe">Deluxe</option>
+                    <option value="Classy">Classy</option>
+                    <option value="Kubrik">Kubrik</option>
+                </select>
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/people.png" alt="" class="img-fluid"></span>
+                  <input type="text" class="tanggal" required placeholder="jumlah orang">
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/movie.png" alt="" class="img-fluid"></span>
+                  <input type="text" class="tanggal" required placeholder="Judul film">
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/popcorn-16.png" alt="" class="img-fluid"></span>
+                  <input type="text" class="tanggal" required placeholder="Makanan">
+              </div>
+              <div class="field space">
+                  <span><img src="./assets/icon/drink.png" alt="" class="img-fluid"></span>
+                  <input type="text" class="tanggal" required placeholder="Minuman">
+              </div>
+              <div class="field space">
+                  <input type="submit" value="Checkout" href="#">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- header end -->
+
+    <!-- section footer start -->
+    <footer id="footer">
+      <div class="container">
+          <div class="footer-head">
+              <h2>
+                  <b>TheRC.</b>
+              </h2>
+              <h3>
+                  <b>RoomCinema</b>
+              </h3>
+              <p>
+                  Pengalaman nonton film yang tak terlupakan disini.<br/>
+                  Lebih privat, lebih seru,lebih murah dan lebih nyaman
+              </p>
+          </div>
+          <div class="address">
+              <h4>Alamat</h4>
+              <p>
+                  Jalan Sunan Muria no 12<br/>
+                  Lowokwaru, Malang<br/>
+                  65141<br/>
+              </p>
+          </div>
+          <div class="contact">
+              <h4>Hubungi Kami</h4>
+              <div class="whatsapp">
+                  <img src="./assets/icon/whatsapp-16.png" alt="">
+                  <h5>081325957084</h5>
+              </div>
+              <div class="email">
+                  <img src="./assets/icon/email-5-16.png" alt="">
+                  <h5>theroomcinema@gmail.com</h5>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- section footer end -->
+  <script src="script.js"></script>
+</body>
+</html>
