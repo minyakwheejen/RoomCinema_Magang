@@ -570,8 +570,6 @@ hr{
     min-height: 200vh;
     background: linear-gradient(180deg, var(--black) 3.87%, var(--secondary) 50.62%, var(--black) 100%);
     padding: 30px;
-    display: flex;
-    flex-direction: row;
 }
 
 .movie h1, h2, h3, h4, p{
@@ -601,7 +599,7 @@ hr{
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .poster{
@@ -1313,7 +1311,7 @@ input[type="submit"]:hover {
     }
 
     .nowplaying-galery{
-        gap: 30px;
+        display: flex;
     }
     
     .nowplaying-galery img{
